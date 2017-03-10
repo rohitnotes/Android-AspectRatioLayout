@@ -27,7 +27,7 @@ compile 'com.takwolf.android:aspectratio:0.0.1'
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:arl_widthRatio="4"
-    app:arl_heigthRatio="3">
+    app:arl_heightRatio="3">
 
     <YourView />
 
