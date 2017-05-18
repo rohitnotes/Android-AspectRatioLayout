@@ -5,10 +5,13 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
 public class AspectRatioLayout extends FrameLayout {
+
+    private static final String TAG = "AspectRatioLayout";
 
     private float widthRatio;
     private float heightRatio;
@@ -58,7 +61,9 @@ public class AspectRatioLayout extends FrameLayout {
             width = (int) (widthRatio / heightRatio * heightSize);
             height = heightSize;
         } else {
-            throw new RuntimeException("Must make width or height measure spec exactly.");
+            width = 0;
+            height = 0;
+            Log.i(TAG, "Width or height are not exact, so set them 0.");
         }
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
