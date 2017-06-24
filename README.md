@@ -16,13 +16,13 @@ A simple aspect ratio layout for Android.
 
 ### Gradle ###
 
-```
+``` gradle
 compile 'com.takwolf.android:aspectratio:0.0.3'
 ```
 
 ### Layout ###
 
-```
+``` xml
 <com.takwolf.android.aspectratio.AspectRatioLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
