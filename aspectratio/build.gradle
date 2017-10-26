@@ -10,7 +10,7 @@ ext {
     groupId = 'com.takwolf.android'
     artifactId = 'aspectratio'
 
-    libraryVersion = '0.0.3'
+    libraryVersion = '0.1.0'
     libraryName = 'Android AspectRatioLayout'
     libraryDescription = 'A simple aspect ratio layout for Android.'
 
