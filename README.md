@@ -1,9 +1,9 @@
 # Android AspectRatioLayout #
 
 [![Build Status](https://travis-ci.org/TakWolf/Android-AspectRatioLayout.svg?branch=master)](https://travis-ci.org/TakWolf/Android-AspectRatioLayout)
-[![Bintray](https://img.shields.io/bintray/v/takwolf/maven/Android-AspectRatioLayout.svg)](https://bintray.com/takwolf/maven/Android-AspectRatioLayout/_latestVersion)
+[![Bintray](https://api.bintray.com/packages/takwolf/maven/Android-AspectRatioLayout/images/download.svg)](https://bintray.com/takwolf/maven/Android-AspectRatioLayout/_latestVersion)
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://www.android.com)
-[![API](https://img.shields.io/badge/API-1%2B-brightgreen.svg)](https://android-arsenal.com/api?level=1)
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg)](https://android-arsenal.com/api?level=14)
 [![License](https://img.shields.io/github/license/TakWolf/Android-AspectRatioLayout.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 A simple aspect ratio layout for Android.
