@@ -17,7 +17,7 @@ A simple aspect ratio layout for Android.
 ### Gradle ###
 
 ``` gradle
-implementation 'com.takwolf.android:aspectratio:0.1.1'
+implementation 'com.takwolf.android:aspectratio:0.1.2'
 ```
 
 ### Layout ###
