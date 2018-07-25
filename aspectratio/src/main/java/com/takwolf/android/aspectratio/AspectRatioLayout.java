@@ -70,13 +70,14 @@ public class AspectRatioLayout extends FrameLayout {
             Log.i(TAG, "Width or height are not exact, so set them 0.");
         }
 
+        setMeasuredDimension(width, height);
+
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
                 measureChildWithMargins(child, MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), 0, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY), 0);
             }
         }
-        setMeasuredDimension(width, height);
     }
 
     public float getWidthRatio() {
