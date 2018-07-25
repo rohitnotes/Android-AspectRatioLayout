@@ -69,6 +69,7 @@ public class AspectRatioLayout extends FrameLayout {
             height = 0;
             Log.i(TAG, "Width or height are not exact, so set them 0.");
         }
+
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
