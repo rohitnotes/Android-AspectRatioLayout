@@ -10,7 +10,6 @@ import android.support.annotation.RequiresApi;
 import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 import android.widget.FrameLayout;
 
 public class AspectRatioLayout extends FrameLayout {
@@ -52,32 +51,23 @@ public class AspectRatioLayout extends FrameLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-
-        int width;
-        int height;
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
 
         if (widthMode == MeasureSpec.EXACTLY) {
-            width = widthSize;
-            height = (int) (heightRatio / widthRatio * widthSize);
+            height = Math.round(heightRatio / widthRatio * width);
         } else if (heightMode == MeasureSpec.EXACTLY) {
-            width = (int) (widthRatio / heightRatio * heightSize);
-            height = heightSize;
+            width = Math.round(widthRatio / heightRatio * height);
         } else {
             width = 0;
             height = 0;
             Log.i(TAG, "Width or height are not exact, so set them 0.");
         }
 
-        setMeasuredDimension(width, height);
+        widthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
 
-        for (int i = 0; i < getChildCount(); i++) {
-            View child = getChildAt(i);
-            if (child.getVisibility() != GONE) {
-                measureChildWithMargins(child, MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), 0, MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY), 0);
-            }
-        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     public float getWidthRatio() {
