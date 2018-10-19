@@ -61,7 +61,7 @@ public class AspectRatioLayout extends FrameLayout {
         } else {
             width = 0;
             height = 0;
-            Log.i(TAG, "Width or height are not exact, so set them 0.");
+            Log.w(TAG, "Width or height are not exact, so set them 0.");
         }
 
         widthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
