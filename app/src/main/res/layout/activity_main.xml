@@ -1,72 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:elevation="@dimen/app_bar_elevation"
-        app:title="@string/app_name"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:padding="8dp"
+        android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <com.takwolf.android.aspectratio.AspectRatioLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:layout_margin="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="?attr/colorAccent"
+            android:clickable="true"
+            android:focusable="true"
+            app:arl_widthRatio="16"
+            app:arl_heightRatio="9">
 
-            <com.takwolf.android.aspectratio.AspectRatioLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:foreground="?attr/selectableItemBackground"
-                android:background="?attr/colorAccent"
-                android:clickable="true"
-                app:arl_widthRatio="16"
-                app:arl_heightRatio="9">
+                android:layout_height="match_parent"
+                android:text="16 : 9"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="center" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="16 : 9"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:gravity="center" />
+        </com.takwolf.android.aspectratio.AspectRatioLayout>
 
-            </com.takwolf.android.aspectratio.AspectRatioLayout>
+        <com.takwolf.android.aspectratio.AspectRatioLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="?attr/colorAccent"
+            android:clickable="true"
+            android:focusable="true"
+            app:arl_widthRatio="4"
+            app:arl_heightRatio="3">
 
-            <com.takwolf.android.aspectratio.AspectRatioLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:foreground="?attr/selectableItemBackground"
-                android:background="?attr/colorAccent"
-                android:clickable="true"
-                app:arl_widthRatio="4"
-                app:arl_heightRatio="3">
+                android:layout_height="match_parent"
+                android:text="4 : 3"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="center" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="4 : 3"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:gravity="center" />
+        </com.takwolf.android.aspectratio.AspectRatioLayout>
 
-            </com.takwolf.android.aspectratio.AspectRatioLayout>
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>
