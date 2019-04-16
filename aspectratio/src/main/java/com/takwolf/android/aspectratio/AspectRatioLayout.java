@@ -50,23 +50,23 @@ public class AspectRatioLayout extends FrameLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 
         if (widthMode == MeasureSpec.EXACTLY) {
             height = Math.round(heightRatio / widthRatio * width);
+            heightMode = MeasureSpec.EXACTLY;
         } else if (heightMode == MeasureSpec.EXACTLY) {
             width = Math.round(widthRatio / heightRatio * height);
+            widthMode = MeasureSpec.EXACTLY;
         } else {
-            width = 0;
-            height = 0;
-            Log.w(TAG, "Width or height are not exact, so set them 0.");
+            Log.w(TAG, "Width or height are not exact, so do nothing.");
         }
 
-        widthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
-        heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
+        widthMeasureSpec = MeasureSpec.makeMeasureSpec(width, widthMode);
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, heightMode);
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
